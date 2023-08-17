@@ -27,7 +27,7 @@ function Free() {
     const fetchData = async () => {
       if (componentRef.current) {
         await domtoimage.toJpeg(componentRef.current, { quality: 0.98 }).then(function (dataUrl: string) {
-          setImg(dataUrl)     
+          setImg(dataUrl)          
           setData({...data, report_file: dataUrl})
         })
       }
@@ -38,7 +38,7 @@ function Free() {
 
   const postData = async () => {
     try {
-      await axios.post('http://127.0.0.1:8000/upload-report/', {
+      await axios.post('https://nazimbudaqli.pythonanywhere.com/upload-report/', {
         email: 'tami@mail.ru', 
         report_file: img
       }).then(res=>{
@@ -50,7 +50,7 @@ function Free() {
 
   useEffect(()=>{
     if (img !== null && img !== '') {
-      postData()      
+      postData()   
     } 
   }, [img])
 
