@@ -172,7 +172,7 @@ const Report = forwardRef<HTMLDivElement, {}>((props, ref) => {
             <p className='test-result'>TEST RESULT</p>
           </div>
           <div className='person-info'>
-            <p className='name-age'>{fullName}, {age} year old</p>
+            <p className='name-age'>{fullName}, {age} years old</p>
             <p className='test-info'>Test date: {testDate}</p>
             <p className='test-info'>Test ID: {testId}</p>
           </div>

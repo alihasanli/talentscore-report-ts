@@ -49,14 +49,14 @@ body.active-modal {
 
 .report-done {
     color: #003F4D;
-    font: 600 24px 'Montserrat';
+    font: 600 24px 'Montserrat', sans-serif;
     line-height: normal;
     text-align: center;
 }
 
 .report-title {
     color: #003F4D;
-    font: 400 16px 'Montserrat';
+    font: 400 16px 'Montserrat', sans-serif;
     line-height: normal;
     text-align: center;
     margin-bottom: 45px;
@@ -64,21 +64,21 @@ body.active-modal {
 
 .free-header, .premium-header {
     color: #01B9A0;
-    font: 600 16px 'Montserrat';
+    font: 600 16px 'Montserrat', sans-serif;
     line-height: normal;
     text-align: center;
 }
 
 .premium-title {
     color: #003F4D;
-    font: 600 24px 'Montserrat';
+    font: 600 24px 'Montserrat', sans-serif;
     line-height: normal;
     margin: 21px 0;
 }
 
 .premium-text > p {
     color: #003F4D;
-    font: 400 16px 'Montserrat';
+    font: 400 16px 'Montserrat', sans-serif;
     line-height: normal;   
 }
 
@@ -102,7 +102,7 @@ body.active-modal {
 .offer-title {
     width: 60%;
     color: #003F4D;
-    font: 600 20px 'Montserrat';
+    font: 600 20px 'Montserrat', sans-serif;
     line-height: normal;
     margin-bottom: 22px;
 }
@@ -113,7 +113,7 @@ body.active-modal {
 
 .offer-text {
     color: #003F4D;
-    font: 400 16px 'Montserrat';
+    font: 400 16px 'Montserrat', sans-serif;
     line-height: normal;
 }
 
@@ -134,13 +134,13 @@ body.active-modal {
 
 .offer-button {
     width: 80%;
-    font: 600 14px 'Montserrat';
+    font: 600 14px 'Montserrat', sans-serif;
     margin-top: 80px;
 }  
 
 .share-button {
     width: 55%;
-    font: 500 22px 'Montserrat';
+    font: 500 22px 'Montserrat', sans-serif;
     margin-top: 55px; 
 }
 
@@ -188,7 +188,7 @@ body.active-modal {
 
 .test-result {
     color: #FFF;
-    font: 500 7.5px 'Montserrat';
+    font: 500 7.5px 'Montserrat', sans-serif;
     line-height: normal;
 }
 
@@ -236,7 +236,7 @@ body.active-modal {
 
 .preliminary-info > p {
     color: #003F4D;
-    font: 400 12px 'Montserrat';
+    font: 400 12px 'Montserrat', sans-serif;
     line-height: normal;
 }
 
@@ -283,13 +283,13 @@ body.active-modal {
 }
 
 .chart1-result {
-    font: 600 8.2px 'Montserrat';
+    font: 600 8.2px 'Montserrat', sans-serif;
     line-height: normal;
 }
 
 .percentile-title {
     color: #003F4D;
-    font: 600 10px 'Montserrat';
+    font: 600 10px 'Montserrat', sans-serif;
     line-height: normal;
     position: absolute;
     z-index: 6;
@@ -318,7 +318,7 @@ body.active-modal {
 
 .chart-1-percentile {
     color: #003F4D;
-    font: 300 6px 'Montserrat';
+    font: 300 6px 'Montserrat', sans-serif;
     line-height: normal;
     position: absolute;
 }
@@ -387,9 +387,13 @@ body.active-modal {
 
 .percentile-ranges-title {
     color: #003F4D;
-    font: 600 10px 'Montserrat';
+    font: 600 10px 'Montserrat', sans-serif;
     line-height: normal;
     margin-bottom: 6.6px;
+}
+
+.percentile-ranges-1 {
+    padding-right: 3px;
 }
 
 .percentile-ranges-info, .percentile-color-number {
@@ -407,7 +411,7 @@ body.active-modal {
     color: #003F4D;
     font-size: 10px;
     font-weight: 300;
-    font: 300 10px 'Montserrat';
+    font: 300 10px 'Montserrat', sans-serif;
     line-height: normal;
 }
 
@@ -425,7 +429,7 @@ body.active-modal {
 
 .report-part3-title {
     color: #003F4D;
-    font: 600 14px 'Montserrat';
+    font: 600 14px 'Montserrat', sans-serif;
     line-height: normal;
     margin-bottom: 13px;
 }
@@ -492,7 +496,7 @@ body.active-modal {
 
 .chart-2-text {
     color: #003F4D;
-    font: 400 10px 'Montserrat';
+    font: 400 10px 'Montserrat', sans-serif;
     line-height: normal;
 }
 
@@ -504,7 +508,7 @@ body.active-modal {
 
 .chart-2-percent {
     color: #003F4D;
-    font: 500 14px 'Montserrat';
+    font: 500 14px 'Montserrat', sans-serif;
     line-height: normal;
     padding-left: 25%;
 }
@@ -559,7 +563,7 @@ body.active-modal {
 .download-text {
     color: #003F4D;
     width: 60px;
-    font: 600 8px 'Montserrat';
+    font: 600 8px 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 600;
     line-height: normal;

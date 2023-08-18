@@ -1,6 +1,3 @@
-import BranchedLine from './../assets/branchedline.svg'
-import StraightLine from './../assets/straightline.svg'
-
 interface ChartData {
     sport: ChartItem;
     education: ChartItem;
@@ -47,8 +44,26 @@ function PolarAreaChart ({ data }: { data: ChartData }) {
                 )) 
             }  
 
-            { Array.from({ length: 4 }, (_, i) => ( <img key={i} src={BranchedLine} alt='Branched Chart Line' className={`chart-2-direct chart-2-direct-${i + 1}`} /> )) }
-            { Array.from({ length: 2 }, (_, i) => ( <img key={i} src={StraightLine} alt='Straight Chart Line' className={`chart-2-direct chart-2-direct-${i + 5}`} /> )) }
+            { 
+                Array.from({ length: 4 }, (_, i) => ( 
+                    <svg key={i} className={`chart-2-direct chart-2-direct-${i + 1}`} width="118" height="12" viewBox="0 0 118 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.4">
+                        <path d="M0.939941 11.5702H116.16V1.4502" stroke="#003F4D" strokeWidth="0.25" strokeMiterlimit="10"/>
+                        <path d="M116.16 2.44006C116.679 2.44006 117.1 2.01921 117.1 1.50006C117.1 0.980913 116.679 0.560059 116.16 0.560059C115.641 0.560059 115.22 0.980913 115.22 1.50006C115.22 2.01921 115.641 2.44006 116.16 2.44006Z" fill="#003F4D"/>
+                        </g>
+                    </svg>
+                )) 
+            }
+            { 
+                Array.from({ length: 2 }, (_, i) => ( 
+                    <svg key={i} className={`chart-2-direct chart-2-direct-${i + 5}`} width="40" height="3" viewBox="0 0 40 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.4">
+                        <path d="M0.949951 1.17993H38.14" stroke="#003F4D" strokeWidth="0.25" strokeMiterlimit="10"/>
+                        <path d="M38.0999 2.12C38.6199 2.12 39.0399 1.69999 39.0399 1.17999C39.0399 0.659993 38.6199 0.23999 38.0999 0.23999C37.5799 0.23999 37.1599 0.659993 37.1599 1.17999C37.1599 1.69999 37.5799 2.12 38.0999 2.12Z" fill="#003F4D"/>
+                        </g>
+                    </svg>
+                )) 
+            }
             
             <svg xmlns="http://www.w3.org/2000/svg" width="144" height="144" viewBox="0 0 144 144" fill="none">
       
