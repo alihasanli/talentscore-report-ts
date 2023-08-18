@@ -13,11 +13,12 @@ interface ChartItem {
     text: string;
 }
 
-function PolarAreaChart ({ data }: { data: ChartData }) { 
+const PolarAreaChart = ({ data }: { data: ChartData }) => { 
     const {sport, education, program, work, special, language} = data
 
     const dataArray = Object.values(data)
 
+    // This variables used for the filling of slices of polar area chart
     const sportFill = Math.round(sport.value / 10)
     const eduFill = Math.round(education.value / 10)
     const progFill = Math.round(program.value / 10)
@@ -28,6 +29,7 @@ function PolarAreaChart ({ data }: { data: ChartData }) {
     return (
         <div className="chart-2">
             { 
+                // This method used for display the value of each stage with its value, text and colored circle 
                 dataArray.map((elem, i) => (  
                     <div key={i} className={`chart-2-info chart-2-info-${i + 1} ${(i === 4 || i === 5) ? 'chart2-info-reverse' : ''}`}>
                         <p className='chart-2-percent'>{elem.value}%</p>
@@ -45,6 +47,7 @@ function PolarAreaChart ({ data }: { data: ChartData }) {
             }  
 
             { 
+                // This method used for display the branched line of polar area chart
                 Array.from({ length: 4 }, (_, i) => ( 
                     <svg key={i} className={`chart-2-direct chart-2-direct-${i + 1}`} width="118" height="12" viewBox="0 0 118 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g opacity="0.4">
@@ -54,7 +57,9 @@ function PolarAreaChart ({ data }: { data: ChartData }) {
                     </svg>
                 )) 
             }
+
             { 
+                // This method used for display the straight line of polar area chart
                 Array.from({ length: 2 }, (_, i) => ( 
                     <svg key={i} className={`chart-2-direct chart-2-direct-${i + 5}`} width="40" height="3" viewBox="0 0 40 3" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g opacity="0.4">
@@ -67,9 +72,9 @@ function PolarAreaChart ({ data }: { data: ChartData }) {
             
             <svg xmlns="http://www.w3.org/2000/svg" width="144" height="144" viewBox="0 0 144 144" fill="none">
       
-                {/* background color - #EDF4F6 */}
+                // background color - #EDF4F6
 
-                {/* 1st slice (Education) - #00E5BC */}
+                // 1st slice (education stage) - #00E5BC 
                 <path d="M72.6801 51.4199V52.6699C79.3001 52.8799 85.06 56.4499 88.36 61.7299L89.44 61.1099C85.93 55.4599 79.7601 51.6399 72.6801 51.4299V51.4199Z" fill={eduFill >= 1 ? '#00E5BC' : '#EDF4F6'}/> 
                 <path d="M72.6801 45.74V46.99C81.3901 47.21 89.01 51.91 93.28 58.89L94.36 58.2599C89.86 50.9099 81.85 45.96 72.67 45.74H72.6801Z" fill={eduFill >= 2 ? '#00E5BC' : '#EDF4F6'}/> 
                 <path d="M72.6801 40.0701V41.3201C83.4901 41.5401 92.93 47.3801 98.2 56.0501L99.28 55.4301C93.8 46.3901 83.9501 40.2901 72.6801 40.0801V40.0701Z" fill={eduFill >= 3 ? '#00E5BC' : '#EDF4F6'}/> 
@@ -81,7 +86,7 @@ function PolarAreaChart ({ data }: { data: ChartData }) {
                 <path d="M72.6801 6.06006V7.31006C96.0501 7.53006 116.48 20.23 127.64 39.05L128.72 38.4301C117.35 19.2301 96.5101 6.28006 72.6801 6.06006Z" fill={eduFill >= 9 ? '#00E5BC' : '#EDF4F6'}/> 
                 <path d="M72.6801 1.64014C98.1401 1.86014 120.41 15.7002 132.54 36.2202L133.62 35.6002C121.27 14.7102 98.6 0.620137 72.67 0.390137V1.64014H72.6801Z" fill={eduFill === 10 ? '#00E5BC' : '#EDF4F6'}/> 
 
-                {/* 2nd slice (Work) - #FFCB05 */}
+                // 2nd slice (work stage) - #FFCB05 
                 <path d="M91.28 71.8602C91.28 75.1402 90.45 78.2202 89 80.9202L90.08 81.5502C91.64 78.6602 92.52 75.3702 92.52 71.8602C92.52 68.3502 91.63 65.0602 90.08 62.1702L89 62.8002C90.45 65.5002 91.28 68.5902 91.28 71.8602Z" fill={workFill >= 1 ? '#FFCB05' : '#EDF4F6'}/> 
                 <path d="M96.95 71.8601C96.95 76.1701 95.85 80.2201 93.92 83.7601L95 84.3801C97.04 80.6601 98.2 76.3901 98.2 71.8601C98.2 67.3301 97.04 63.0601 95 59.3401L93.92 59.9601C95.85 63.5001 96.95 67.5501 96.95 71.8601Z" fill={workFill >= 2 ? '#FFCB05' : '#EDF4F6'}/> 
                 <path d="M99.9001 56.5102L98.8201 57.1302C101.24 61.5002 102.62 66.5202 102.62 71.8602C102.62 77.2002 101.24 82.2202 98.8201 86.5902L99.9001 87.2102C102.42 82.6502 103.86 77.4202 103.86 71.8502C103.86 66.2802 102.42 61.0502 99.9001 56.4902V56.5102Z" fill={workFill >= 3 ? '#FFCB05' : '#EDF4F6'}/> 
@@ -93,7 +98,7 @@ function PolarAreaChart ({ data }: { data: ChartData }) {
                 <path d="M129.35 39.5103L128.27 40.1302C133.59 49.5102 136.64 60.3303 136.64 71.8603C136.64 83.3903 133.59 94.2103 128.27 103.59L129.35 104.21C134.77 94.6503 137.88 83.6103 137.88 71.8603C137.88 60.1103 134.77 49.0703 129.35 39.5103Z" fill={workFill >= 9 ? '#FFCB05' : '#EDF4F6'}/> 
                 <path d="M142.3 71.8602C142.3 84.4202 138.97 96.2102 133.17 106.42L134.25 107.04C140.16 96.6402 143.55 84.6402 143.55 71.8502C143.55 59.0602 140.16 47.0602 134.25 36.6602L133.17 37.2802C138.97 47.4902 142.3 59.2801 142.3 71.8401V71.8602Z" fill={workFill === 10 ? '#FFCB05' : '#EDF4F6'}/>
 
-                {/* 3rd slice (Language) - #FF0038 */}
+                // 3rd slice (language stage) - #FF0038 
                 <path d="M89.44 82.6202L88.36 82.0002C85.07 87.2802 79.3001 90.8402 72.6801 91.0602V92.3102C79.7601 92.1002 85.93 88.2802 89.44 82.6302V82.6202Z" fill={langFill >= 1 ? '#FF0038' : '#EDF4F6'}/> 
                 <path d="M94.37 85.4701L93.2899 84.8401C89.0099 91.8101 81.3999 96.5201 72.6899 96.7401V97.9901C81.8599 97.7701 89.8799 92.8201 94.3799 85.4701H94.37Z" fill={langFill >= 2 ? '#FF0038' : '#EDF4F6'}/> 
                 <path d="M99.28 88.3002L98.2 87.6802C92.94 96.3402 83.4901 102.19 72.6801 102.41V103.66C83.9501 103.44 93.8 97.3402 99.28 88.3102V88.3002Z" fill={langFill >= 3 ? '#FF0038' : '#EDF4F6'}/> 
@@ -105,7 +110,7 @@ function PolarAreaChart ({ data }: { data: ChartData }) {
                 <path d="M128.72 105.3L127.64 104.68C116.48 123.5 96.0501 136.2 72.6801 136.42V137.67C96.5101 137.45 117.35 124.5 128.72 105.3Z" fill={langFill >= 9 ? '#FF0038' : '#EDF4F6'}/> 
                 <path d="M132.55 107.51C120.41 128.03 98.1499 141.87 72.6899 142.09V143.34C98.6199 143.12 121.28 129.02 133.64 108.13L132.56 107.51H132.55Z" fill={langFill === 10 ? '#FF0038' : '#EDF4F6'}/> 
 
-                {/* 4th slice (Special) - #00A8E1 */}
+                // 4th slice (special stage) - #00A8E1 
                 <path d="M71.4301 92.3002V91.0502C64.8201 90.8402 59.05 87.2702 55.75 81.9902L54.67 82.6102C58.18 88.2602 64.3501 92.0802 71.4301 92.2902V92.3002Z" fill={specialFill >= 1 ? '#00A8E1' : '#EDF4F6'}/> 
                 <path d="M71.43 97.9901V96.7401C62.72 96.5201 55.1 91.8201 50.83 84.8401L49.75 85.4701C54.24 92.8201 62.26 97.7701 71.44 97.9901H71.43Z" fill={specialFill >= 2 ? '#00A8E1' : '#EDF4F6'}/> 
                 <path d="M71.43 103.66V102.41C60.63 102.19 51.18 96.3402 45.92 87.6802L44.84 88.3002C50.32 97.3402 60.1699 103.44 71.4399 103.66H71.43Z" fill={specialFill >= 3 ? '#00A8E1' : '#EDF4F6'}/> 
@@ -117,7 +122,7 @@ function PolarAreaChart ({ data }: { data: ChartData }) {
                 <path d="M71.43 137.67V136.42C48.06 136.2 27.63 123.5 16.47 104.68L15.39 105.3C26.76 124.5 47.6 137.45 71.43 137.67Z" fill={specialFill >= 9 ? '#00A8E1' : '#EDF4F6'}/> 
                 <path d="M71.43 142.09C45.97 141.87 23.7 128.03 11.57 107.51L10.49 108.13C22.84 129.02 45.51 143.11 71.44 143.34V142.09H71.43Z" fill={specialFill === 10 ? '#00A8E1' : '#EDF4F6'}/> 
 
-                {/* 5th slice (Program) - #8800E0 */}
+                // 5th slice (program stage) - #8800E0 
                 <path d="M52.84 71.8602C52.84 68.5802 53.67 65.5002 55.12 62.8002L54.04 62.1702C52.48 65.0602 51.6 68.3502 51.6 71.8602C51.6 75.3702 52.49 78.6602 54.04 81.5502L55.12 80.9202C53.67 78.2202 52.84 75.1302 52.84 71.8602Z" fill={progFill >= 1 ? '#8800E0' : '#EDF4F6'}/> 
                 <path d="M47.17 71.8601C47.17 67.5501 48.27 63.5001 50.2 59.9601L49.1201 59.3401C47.0801 63.0601 45.92 67.3301 45.92 71.8601C45.92 76.3901 47.0801 80.6601 49.1201 84.3801L50.2 83.7601C48.27 80.2201 47.17 76.1701 47.17 71.8601Z" fill={progFill >= 2 ? '#8800E0' : '#EDF4F6'}/> 
                 <path d="M44.21 87.22L45.29 86.6C42.87 82.23 41.49 77.2101 41.49 71.8701C41.49 66.5301 42.87 61.51 45.29 57.14L44.21 56.52C41.69 61.08 40.25 66.31 40.25 71.88C40.25 77.45 41.69 82.68 44.21 87.23V87.22Z" fill={progFill >= 3 ? '#8800E0' : '#EDF4F6'}/> 
@@ -129,7 +134,7 @@ function PolarAreaChart ({ data }: { data: ChartData }) {
                 <path d="M7.49001 71.8603C7.49001 60.3303 10.54 49.5102 15.86 40.1302L14.78 39.5103C9.36 49.0703 6.25 60.1103 6.25 71.8603C6.25 83.6103 9.36 94.6503 14.78 104.21L15.86 103.59C10.54 94.2103 7.49001 83.3903 7.49001 71.8603Z" fill={progFill >= 9 ? '#8800E0' : '#EDF4F6'}/> 
                 <path d="M1.81995 71.8602C1.81995 84.4202 5.14995 96.2102 10.95 106.42L9.86995 107.04C3.95995 96.6402 0.569946 84.6402 0.569946 71.8502C0.569946 59.0602 3.95995 47.0602 9.86995 36.6602L10.95 37.2802C5.14995 47.4902 1.81995 59.2801 1.81995 71.8401V71.8602Z" fill={progFill === 10 ? '#8800E0' : '#EDF4F6'}/> 
 
-                {/* 6th slice (Sport) - #09959A */}
+                // 6th slice (sport stage) - #09959A 
                 <path d="M54.6801 61.1102L55.76 61.7302C59.05 56.4502 64.82 52.8902 71.44 52.6702V51.4202C64.36 51.6402 58.1901 55.4502 54.6801 61.1002V61.1102Z" fill={sportFill >= 1 ? '#09959A' : '#EDF4F6'}/> 
                 <path d="M49.75 58.2602L50.83 58.8902C55.11 51.9202 62.72 47.2102 71.43 46.9902V45.7402C62.26 45.9602 54.24 50.9202 49.74 58.2602H49.75Z" fill={sportFill >= 2 ? '#09959A' : '#EDF4F6'}/> 
                 <path d="M44.84 55.4301L45.92 56.0501C51.18 47.3901 60.63 41.5401 71.43 41.3201V40.0701C60.16 40.2901 50.31 46.3901 44.83 55.4201L44.84 55.4301Z" fill={sportFill >= 3 ? '#09959A' : '#EDF4F6'}/>  
@@ -143,6 +148,6 @@ function PolarAreaChart ({ data }: { data: ChartData }) {
             </svg>
         </div>
     )
-};
+}
 
-export default PolarAreaChart
+export default PolarAreaChart;

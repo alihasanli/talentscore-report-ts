@@ -16,6 +16,7 @@ const Rate: React.FC<RateProps> = ({ val, ranges }) => {
     return (
         <div className='result-rate'>
             {
+                // This method used for display the rate section which located under the speedometer chart
                 ranges.map((elem, i) => (
                     <div key={i} className='rate-collection'>
                         <div
@@ -35,7 +36,7 @@ const Rate: React.FC<RateProps> = ({ val, ranges }) => {
                 ))
             }
         </div>
-    );
-};
+    )
+}
 
 export default Rate;

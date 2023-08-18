@@ -6,7 +6,7 @@ interface SpeedometerChartProps {
   val: number;
 }
 
-function SpeedometerChart({ val }: SpeedometerChartProps) {
+const SpeedometerChart = ({ val }: SpeedometerChartProps) => {
     return (
         <div className='half-progress-bar'>
             <CircularProgressbarWithChildren
@@ -83,12 +83,13 @@ function SpeedometerChart({ val }: SpeedometerChartProps) {
                 <p className='half-progress-bar-text'>{val}<span className='percent-sign'>%</span></p>
             </CircularProgressbarWithChildren>
             {
+                // This method used for display the decimals of speedometer chart from 0 to 100
                 Array.from({ length: 11 }, (_, i) => (
                     <span key={i} className={`chart-1-percentile percentile-${i}`}>{i * 10}</span>
                 ))
             }
         </div>
-    );
+    )
 }
 
 export default SpeedometerChart;

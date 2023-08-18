@@ -1,4 +1,4 @@
-function Free() {
+const Free = () => {
   return (
     <div className='premium'>
       <h2 className='premium-header'>Upgrade</h2>
@@ -40,7 +40,7 @@ function Free() {
         <button className='offer-button'>See the Premium report features and prices</button>
       </div>
     </div>
-  );
+  )
 }
   
   export default Free;

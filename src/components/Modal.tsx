@@ -7,7 +7,7 @@ interface ModalProps {
   imgUrl: string;
 }
 
-function Modal({ modal, setModal, imgUrl }: ModalProps): JSX.Element {
+const Modal = ({ modal, setModal, imgUrl }: ModalProps): JSX.Element => {
     const modalRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -24,6 +24,7 @@ function Modal({ modal, setModal, imgUrl }: ModalProps): JSX.Element {
         };
     }, [setModal]);
 
+    // This function used for the change background of share buttons
     const changeColor = (event: React.MouseEvent<HTMLButtonElement>) => {
         const clickedButton = event.currentTarget;
         const icon = clickedButton.querySelector('i') as HTMLElement;
@@ -69,7 +70,7 @@ function Modal({ modal, setModal, imgUrl }: ModalProps): JSX.Element {
             </>
         )}
     </>
-  );
+  )
 }
 
 export default Modal;

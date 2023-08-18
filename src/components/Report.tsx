@@ -100,9 +100,7 @@ const Report = forwardRef<HTMLDivElement, {}>((props, ref) => {
     if (a) {
       console.log(props);
     }
-    
-    
-  },[])
+  }, [])
 
   const personalInfo: PersonalInfo = {
     name: 'Yashar',
@@ -127,21 +125,25 @@ const Report = forwardRef<HTMLDivElement, {}>((props, ref) => {
   const peerVal = 81
   const overallVal = 92
 
-  function addOrdinalSuffix(number: number) {
-    const lastDigit = number % 10;
+
+  // This function used for the create suffix for the number
+  const addOrdinalSuffix = (number: number) => {
+    const lastDigit = number % 10
 
     switch (lastDigit) {
       case 1:
-        return <>{number}<sup>st</sup></>;
+        return <>{number}<sup>st</sup></>
       case 2:
-        return <>{number}<sup>nd</sup></>;
+        return <>{number}<sup>nd</sup></>
       case 3:
-        return <>{number}<sup>rd</sup></>;
+        return <>{number}<sup>rd</sup></>
       default:
-        return <>{number}<sup>th</sup></>;
+        return <>{number}<sup>th</sup></>
     }
   }
 
+
+  // This function used for the getting text information for the each stage depends on rate 
   const getText = (arg: any) => {
     return (
       arg.rateText.map((elem:any) => (
@@ -200,6 +202,7 @@ const Report = forwardRef<HTMLDivElement, {}>((props, ref) => {
             <div className='percentile-ranges-info'>
               <div className='percentile-ranges-1'>
                 {
+                  // This method used for display the ranges with its colored circle
                   ranges.map((elem, i) => (
                     <div key={i} className='percentile-color-number'>
                       <div className='percentile-color' style={{backgroundColor: elem.color}}></div>
@@ -210,6 +213,7 @@ const Report = forwardRef<HTMLDivElement, {}>((props, ref) => {
               </div>
               <div className='percentile-ranges-2'>
                 {
+                  // This method used for display the text of ranges
                   ranges.map((elem, i) => (
                     <div key={i} className='percentile-ranges-word'>
                       <p className='percentile-word'>{elem.result}</p>

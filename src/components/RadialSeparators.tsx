@@ -6,6 +6,11 @@ interface SeparatorProps {
   style: React.CSSProperties;
 }
 
+interface RadialSeparatorsProps {
+  count: number;
+  style: React.CSSProperties;
+}
+
 const Separator: FC<SeparatorProps> = (props) => {
   return (
     <div
@@ -20,20 +25,15 @@ const Separator: FC<SeparatorProps> = (props) => {
     >
       <div style={props.style} />
     </div>
-  );
-};
-
-interface RadialSeparatorsProps {
-  count: number;
-  style: React.CSSProperties;
+  )
 }
 
 const RadialSeparators: FC<RadialSeparatorsProps> = (props) => {
-  const turns = 1 / props.count;
+  const turns = 1 / props.count
 
   return _.range(props.count).map((index: number) => (
     <Separator key={index} turns={index * turns} style={props.style} />
-  ));
-};
+  ))
+}
 
 export default RadialSeparators;
