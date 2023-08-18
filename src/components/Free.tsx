@@ -19,6 +19,7 @@ function Free() {
 
   const [modal, setModal] = useState(false)
   const [img, setImg] = useState('')
+  const [imgUrl, setImgUrl] = useState('')
   const [disable, setDisable] = useState(false)
 
   const componentRef = useRef<HTMLDivElement>(null)
@@ -42,15 +43,15 @@ function Free() {
         email: 'tami@mail.ru', 
         report_file: img
       }).then(res=>{
-        setImg(res.data.report_file);
+        setImgUrl(res.data.report_file)
         setDisable(true)
       });
     } catch (error) {}  
   }
 
   useEffect(()=>{
-    if (img !== null && img !== '') {
-      postData()   
+    if (img !== null && img !== undefined && img !== '') {
+      postData()  
     } 
   }, [img])
 
@@ -78,7 +79,7 @@ function Free() {
           </button>
         </div>
         <button onClick={openModal} disabled={disable ? false : true} className='share-button'>SHARE</button>
-        <Modal modal={modal} setModal={setModal} img={img} /> 
+        <Modal modal={modal} setModal={setModal} imgUrl={imgUrl}  /> 
       </div>
     </> 
   );

@@ -4,10 +4,10 @@ import { FacebookShareButton, LinkedinShareButton } from "react-share";
 interface ModalProps {
   modal: boolean;
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
-  img: string;
+  imgUrl: string;
 }
 
-function Modal({ modal, setModal, img }: ModalProps): JSX.Element {
+function Modal({ modal, setModal, imgUrl }: ModalProps): JSX.Element {
     const modalRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -52,14 +52,14 @@ function Modal({ modal, setModal, img }: ModalProps): JSX.Element {
                 <div className="modal-bg"></div>
                 <div className='modal' ref={modalRef}>
                     <LinkedinShareButton
-                        url={img}
+                        url={imgUrl}
                         onClick={changeColor}
                         className='linkedin-share'
                     >
                         <i className='fa-brands fa-linkedin-in'></i>
                     </LinkedinShareButton>
                     <FacebookShareButton
-                        url={img}
+                        url={imgUrl}
                         onClick={changeColor}
                         className='linkedin-share'
                     >
