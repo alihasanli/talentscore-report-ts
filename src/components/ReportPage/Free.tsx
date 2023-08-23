@@ -54,7 +54,7 @@ const Free = () => {
         setDisable(true)        
       })
     } catch (error) {}  
-  }
+  } 
 
   // This useEffect used for checking data and running posData function
   useEffect(()=>{
