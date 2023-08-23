@@ -1,14 +1,14 @@
-import { useEffect, useRef, useState } from 'react';
-import { useReactToPrint } from 'react-to-print';
-import axios from 'axios';
+import { useEffect, useRef, useState } from 'react'
+import { useReactToPrint } from 'react-to-print'
+import axios from 'axios'
 import domtoimage from 'dom-to-image'
-import Report from './Report';
-import Modal from './Modal';
-import download from './../assets/downloadicon.svg';
+import Report from './Report'
+import Modal from './Modal'
+import download from './../../assets/img/downloadicon.svg'
 
 interface Data {
-  email: string;
-  report_file: string;
+  email: string
+  report_file: string
 }
 
 const Free = () => {
@@ -38,7 +38,7 @@ const Free = () => {
           setData({...data, report_file: dataUrl})
         })
       }
-    };
+    }
 
     fetchData()
   }, [])
@@ -52,7 +52,7 @@ const Free = () => {
       }).then(res=>{
         setImgUrl(res.data.report_file)
         setDisable(true)
-      });
+      })
     } catch (error) {}  
   }
 
@@ -95,4 +95,4 @@ const Free = () => {
   )
 }
 
-export default Free;
+export default Free

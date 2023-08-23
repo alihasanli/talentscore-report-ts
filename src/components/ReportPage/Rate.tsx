@@ -1,15 +1,15 @@
-import React from 'react';
+import React from 'react'
 
 interface Range {
-    min: number;
-    max: number;
-    color: string;
-    result: string;
+    min: number
+    max: number
+    color: string
+    result: string
 }
 
 interface RateProps {
-    val: number;
-    ranges: Range[];
+    val: number
+    ranges: Range[]
 }
 
 const Rate: React.FC<RateProps> = ({ val, ranges }) => {
@@ -39,4 +39,4 @@ const Rate: React.FC<RateProps> = ({ val, ranges }) => {
     )
 }
 
-export default Rate;
+export default Rate

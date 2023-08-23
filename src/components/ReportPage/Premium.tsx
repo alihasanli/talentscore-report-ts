@@ -11,7 +11,7 @@ const Free = () => {
       </div>
       <div className='premium-offer'>
         <h2 className='offer-title'>You will get in the Premium report</h2>
-        <div className="offer-text-div">
+        <div className='offer-text-div'>
           <p className='offer-text'>
             <i className='fa-solid fa-check offer-check'></i>
             Verified certification
@@ -42,5 +42,5 @@ const Free = () => {
     </div>
   )
 }
-  
-  export default Free;
+
+export default Free

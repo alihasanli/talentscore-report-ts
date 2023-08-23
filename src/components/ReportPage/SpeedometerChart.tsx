@@ -1,9 +1,9 @@
-import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
-import 'react-circular-progressbar/dist/styles.css';
-import RadialSeparators from './RadialSeparators';
+import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar'
+import 'react-circular-progressbar/dist/styles.css'
+import RadialSeparators from './RadialSeparators'
 
 interface SpeedometerChartProps {
-  val: number;
+  val: number
 }
 
 const SpeedometerChart = ({ val }: SpeedometerChartProps) => {
@@ -75,8 +75,8 @@ const SpeedometerChart = ({ val }: SpeedometerChartProps) => {
                 <RadialSeparators
                     count={20}
                     style={{
-                      background: "#fff",
-                      width: "1.5px",
+                      background: '#fff',
+                      width: '1.5px',
                       height: `${10}%`,
                     }}
                 />
@@ -92,4 +92,4 @@ const SpeedometerChart = ({ val }: SpeedometerChartProps) => {
     )
 }
 
-export default SpeedometerChart;
+export default SpeedometerChart

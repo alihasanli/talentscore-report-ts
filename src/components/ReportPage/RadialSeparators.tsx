@@ -1,14 +1,14 @@
-import { FC } from 'react';
-import * as _ from 'lodash';
+import { FC } from 'react'
+import * as _ from 'lodash'
 
 interface SeparatorProps {
-  turns: number;
-  style: React.CSSProperties;
+  turns: number
+  style: React.CSSProperties
 }
 
 interface RadialSeparatorsProps {
-  count: number;
-  style: React.CSSProperties;
+  count: number
+  style: React.CSSProperties
 }
 
 const Separator: FC<SeparatorProps> = (props) => {
@@ -36,4 +36,4 @@ const RadialSeparators: FC<RadialSeparatorsProps> = (props) => {
   ))
 }
 
-export default RadialSeparators;
+export default RadialSeparators
