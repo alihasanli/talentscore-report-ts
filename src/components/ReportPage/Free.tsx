@@ -46,7 +46,7 @@ const Free = () => {
   // This function used for posting data to the backend 
   const postData = async () => {
     try {
-      await axios.post('http://192.168.8.38:8000/user/upload-report/', {
+      await axios.post('https://nazimbudaqli.pythonanywhere.com/user/upload-report/', {
         email: 'tami@mail.ru', 
         report_file: img
       }).then(res=>{
