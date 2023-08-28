@@ -1,7 +1,7 @@
 import './report.css'
-import darklogo from './../../assets/img/darklogo.svg'
-import Free from './Free'
-import Premium from './Premium'
+import darklogo from './../assets/img/darklogo.svg'
+import Free from './components/Free'
+import Premium from './components/Premium'
 
 function App() {
   return (

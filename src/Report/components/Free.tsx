@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useReactToPrint } from 'react-to-print'
 import axios from 'axios'
 import domtoimage from 'dom-to-image'
-import Report from './Report'
+import Report from './ReportFile'
 import Modal from './Modal'
 import download from './../../assets/img/downloadicon.svg'
 

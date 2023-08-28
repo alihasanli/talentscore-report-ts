@@ -1,5 +1,5 @@
 import './assets/reset.css'
-import ReportPage from './components/ReportPage/ReportPage'
+import ReportPage from './Report/Report'
 
 function App() {
   return (
